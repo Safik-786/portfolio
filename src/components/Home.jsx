@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
-import { Camera, Code, Palette, Sparkles, Zap, Rocket, Star } from "lucide-react";
+import { Camera, Code, Palette, Sparkles, Zap, Rocket, Star, Download } from "lucide-react";
 import myavatar from "../assets/safik.jpg";
 // import About from "../About/About";
 
@@ -103,6 +103,14 @@ export default function ProfilePage() {
   const [isHovered, setIsHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const containerRef = useRef(null);
+
+  const handleResumeDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/resume.pdf";     // file in public folder
+    link.download = "My_Resume.pdf";
+    link.click();
+  };
+
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -253,19 +261,21 @@ export default function ProfilePage() {
                 {/* CTA Buttons */}
                 <div className="flex flex-wrap gap-4 pt-4">
                   <button
-                    className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
+                    onClick={handleResumeDownload}
+                    className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white cursor-pointer font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
                     onMouseEnter={() => setCursorVariant("hover")}
                     onMouseLeave={() => setCursorVariant("default")}
                   >
                     <span className="relative z-10 flex items-center gap-2">
-                      <Rocket className="w-5 h-5" />
-                      View My Work
+                      <Download className="w-5 h-5" />
+                      Get My Resume
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </button>
 
                   <button
                     className="group relative px-8 py-4 bg-transparent backdrop-blur-sm border-2 border-gray-700 text-gray-300 font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:border-purple-500 hover:text-white"
+                    
                     onMouseEnter={() => setCursorVariant("hover")}
                     onMouseLeave={() => setCursorVariant("default")}
                   >
@@ -391,7 +401,7 @@ export default function ProfilePage() {
           </div>
         </div>
 
-              {/* <About/> */}
+        {/* <About/> */}
 
 
         <style jsx>{`

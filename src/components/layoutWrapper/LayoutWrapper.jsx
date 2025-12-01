@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 const GridLayoutWrapper = ({ children, dot = false }) => {
     const gridSize = 40;
-    const glowRadius = 200;
+    const glowRadius = 150;
 
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const containerRef = useRef(null);
@@ -68,8 +68,8 @@ const GridLayoutWrapper = ({ children, dot = false }) => {
         return {
             opacity: intensity * 0.8,
             border: ` ${dot ? "0.2px" : "0.02px"} solid transparent`,
-            borderImage: `linear-gradient(90deg, #3b82f6) ${dot ? "" : 1}`,
-            // borderImage: `linear-gradient(90deg, #3b82f6, #8b5cf6) .1`,
+            // borderImage: `linear-gradient(90deg, #3b82f6) ${dot ? "" : 1}`,
+            borderImage: `linear-gradient(90deg, #3b82f6, #8b5cf6) ${dot ? "" : 1}`,
 
         };
     };
@@ -81,8 +81,8 @@ const GridLayoutWrapper = ({ children, dot = false }) => {
                 className="absolute inset-0 pointer-events-none"
                 style={{
                     backgroundImage: `
-                        linear-gradient(to right, rgba(75, 85, 99, 0.03) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(75, 85, 99, 0.03) 1px, transparent 1px)
+                        linear-gradient(to right, rgba(75, 85, 99, 0.08) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(75, 85, 99, 0.08) 1px, transparent 1px)
                     `,
                     backgroundSize: `${gridSize}px ${gridSize}px`,
                     width: containerSize.width,

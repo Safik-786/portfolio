@@ -64,7 +64,7 @@ const AdvanceNavbar = () => {
               <li key={item.id}>
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className={`flex items-center px-3 py-2 text-sm font-medium rounded-md transition-all duration-300 ${
+                  className={`flex items-center cursor-pointer px-3 py-2 text-sm font-medium rounded-md transition-all duration-300 ${
                     activeSection === item.id
                       ? 'text-indigo-400 bg-indigo-900/20 border border-indigo-800/50'
                       : 'text-gray-300 hover:text-indigo-300 hover:bg-gray-800'

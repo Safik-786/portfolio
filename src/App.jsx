@@ -33,28 +33,39 @@ function App() {
       />
 
       <AdvanceNavbar />
-      <GridLayoutWrapper dot={true}>
-        <ProfilePage />
-      </GridLayoutWrapper>
-      <GridLayoutWrapper>
-        <About />
-      </GridLayoutWrapper>
+      <div id="home">
+        <GridLayoutWrapper dot={true}>
+          <ProfilePage />
+        </GridLayoutWrapper>
+      </div>
+      <div id="about">
+        <GridLayoutWrapper>
+          <About />
+        </GridLayoutWrapper>
+      </div>
       <GridLayoutWrapper dot={true}>
         <SkillSection />
       </GridLayoutWrapper>
-
-      <GridLayoutWrapper dot={true}>
-        <Experience />
-      </GridLayoutWrapper>
-      <GridLayoutWrapper dot={true}>
-        <Projects />
-      </GridLayoutWrapper>
-      <GridLayoutWrapper dot={true}>
-        <Roadmap />
-      </GridLayoutWrapper>
-      <GridLayoutWrapper dot={true}>
-        <Footer />
-      </GridLayoutWrapper>
+      <div id="experience">
+        <GridLayoutWrapper dot={true}>
+          <Experience />
+        </GridLayoutWrapper>
+      </div>
+      <div id="projects">
+        <GridLayoutWrapper dot={true}>
+          <Projects />
+        </GridLayoutWrapper>
+      </div>
+      <div id="roadmap">
+        <GridLayoutWrapper dot={true}>
+          <Roadmap />
+        </GridLayoutWrapper>
+      </div>
+      <div id="contact">
+        <GridLayoutWrapper dot={true}>
+          <Footer />
+        </GridLayoutWrapper>
+      </div>
     </div>
   )
 }
